@@ -7,28 +7,28 @@ const hunger = document.querySelector(".hunger");
 const thirst = document.querySelector(".thirst");
 
 class Animal {
-constructor(hunger = 50, thrist = 50, happiness = 50) {
+constructor(hunger = 50, thirst = 50, happiness = 50) {
     (this.hunger = hunger),
-    (this.thrist = thirst),
+    (this.thirst = thirst),
     (this.happiness = happiness);
 }
 
 play() {
     this.happiness += 10;
-    this.hunger -= 9;
-    this.thirst -= 3;
+    this.hunger -= 7;
+    this.thirst -= 2;
 }
 
 feed() {
-    this.hunger += 5;
-    this.thirst -= 3;
-    this.happiness -= 3;
+    this.hunger += 10;
+    this.thirst -= 5;
+    this.happiness -= 2;
 }
 
 giveDrinks() {
-    this.thirst += 5;
-    this.hunger -= 3;
-    this.happiness += 3;
+    this.thirst += 10;
+    this.hunger -= 5;
+    this.happiness += 5;
 }
 }
 
@@ -41,9 +41,9 @@ const updateData = function () {
 };
 
 const idle = function () {
-    animal1.happiness -= 1;
-    animal1.hunger -= 1;
-    animal1.thirst -= 1;
+    animal1.happiness -= 2;
+    animal1.hunger -= 2;
+    animal1.thirst -= 2;
     updateData();
 };
 
@@ -58,7 +58,7 @@ feed.addEventListener("click", function () {
 });
 
 drink.addEventListener("click", function () {
-    animal1.giveDrinks();
+    animal1.giveDrink();
     updateData();
 });
 
